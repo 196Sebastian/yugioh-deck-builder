@@ -1,0 +1,14 @@
+.card-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  margin: 20px;
+}
+
+.search-section {
+  background-color: lightcoral;
+}
+
+.build-section {
+  background-color: lightgreen;
+}
