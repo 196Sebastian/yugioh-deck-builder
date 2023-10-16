@@ -3,20 +3,21 @@ const SearchOptions = () => {
     {
       label: "Attribute",
       options: [
-        { label: "Dark", value: 1 },
-        { label: "Divine", value: 2 },
-        { label: "Earth", value: 3 },
-        { label: "Fire", value: 4 },
-        { label: "Light", value: 5 },
-        { label: "Water", value: 6 },
-        { label: "Wind", value: 7 },
+        { label: "Dark", value: "attribute=Dark" },
+        { label: "Divine", value: "attribute=Divine" },
+        { label: "Earth", value: "attribute=Earth" },
+        { label: "Fire", value: "attribute=Fire" },
+        { label: "Light", value: "attribute=Light" },
+        { label: "Water", value: "attribute=Water" },
+        { label: "Wind", value: "attribute=Wind" },
       ],
     },
     {
       label: "Type",
       options: [
-        { label: "Trap Card", value: 8 },
-        { label: "Spell Card", value: 9 },
+        { label: "Effect Moster", value: "type=Effect Monster" },
+        { label: "Trap Card", value: "type=Trap card" },
+        { label: "Spell Card", value: "type=Spell card" },
       ],
     },
   ];
