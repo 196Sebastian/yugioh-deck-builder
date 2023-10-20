@@ -4,7 +4,9 @@ import SearchOptions from "./searchInfo";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-import "./card-section-style.css";
+import { sizing } from "@mui/system";
+import "./test.css";
+import { Box } from "@mui/material";
 
 const CardSection = () => {
   const [attributeInfo, setAttribute] = useState([]);
@@ -29,30 +31,20 @@ const CardSection = () => {
 
       {attributeInfo.length !== 0 ? (
         <>
-          <div>{console.log(attributeInfo[0].card_images[0].image_url)}</div>
-          <ImageList
-            sx={{
-              width: 580,
-              height: 500,
-            }}
-            gap={30}
-          >
-            {attributeInfo.map((item) => (
-              <ImageListItem key={item.id}>
-                <img
-                  srcSet={item.card_images[0].image_url}
-                  src={item.card_images[0].image_url}
-                  alt={item.name}
-                  loading="lazy"
-                />
-                <ImageListItemBar
-                  title={item.name}
-                  subtitle={<span>by: {item.name}</span>}
-                  position="below"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
+          <div className="card-list-section">
+            <ImageList sx={{ width: 626, height: 530 }} cols={5} gap={12}>
+              {attributeInfo.map((item) => (
+                <ImageListItem key={item.id} sx={{ width: 115 }}>
+                  <img
+                    srcSet={item.card_images[0].image_url}
+                    src={item.card_images[0].image_url}
+                    alt={item.name}
+                    loading="lazy"
+                  />
+                </ImageListItem>
+              ))}
+            </ImageList>
+          </div>
         </>
       ) : null}
     </div>
