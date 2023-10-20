@@ -1,12 +1,9 @@
 import { useState } from "react";
 import Select from "react-select/creatable";
-import SearchOptions from "./searchInfo";
+import SearchOptions from "../data/searchInfo";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
-import { sizing } from "@mui/system";
-import "./test.css";
-import { Box } from "@mui/material";
 
 const CardSection = () => {
   const [attributeInfo, setAttribute] = useState([]);

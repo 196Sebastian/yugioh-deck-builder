@@ -1,5 +1,5 @@
 import CardSection from "./CardSection";
-import HeaderSection from "./Header";
+import HeaderSection from "../header/Header";
 import { useState, useEffect } from "react";
 import "./header-styles.css";
 import "./card-section-style.css";
