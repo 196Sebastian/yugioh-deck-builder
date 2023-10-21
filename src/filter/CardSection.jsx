@@ -3,7 +3,6 @@ import Select from "react-select/creatable";
 import SearchOptions from "../data/searchInfo";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
 
 const CardSection = () => {
   const [attributeInfo, setAttribute] = useState([]);
@@ -29,9 +28,9 @@ const CardSection = () => {
       {attributeInfo.length !== 0 ? (
         <>
           <div className="card-list-section">
-            <ImageList sx={{ width: 626, height: 530 }} cols={5} gap={12}>
+            <ImageList sx={{ width: 626, height: 530 }} cols={5} gap={4}>
               {attributeInfo.map((item) => (
-                <ImageListItem key={item.id} sx={{ width: 115 }}>
+                <ImageListItem key={item.id} sx={{ width: 110 }}>
                   <img
                     srcSet={item.card_images[0].image_url}
                     src={item.card_images[0].image_url}

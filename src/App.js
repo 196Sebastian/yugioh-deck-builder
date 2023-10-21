@@ -1,8 +1,8 @@
-import CardSection from "./CardSection";
-import HeaderSection from "../header/Header";
+import CardSection from "./filter/CardSection";
+import HeaderSection from "./header/Header";
 import { useState, useEffect } from "react";
-import "./header-styles.css";
-import "./card-section-style.css";
+import "./header/header-styles.css";
+import "./filter/card-section-style.css";
 
 function App() {
   const apiUrl = "https://db.ygoprodeck.com/api/v7/cardinfo.php";

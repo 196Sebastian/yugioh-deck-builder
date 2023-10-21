@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderLogo from "./images/yugi-logo.png";
+import HeaderLogo from "../images/yugi-logo.png";
 
 const HeaderSection = () => {
   return (
