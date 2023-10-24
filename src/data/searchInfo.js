@@ -1,6 +1,12 @@
 const SearchOptions = () => {
   const searchOptions = [
     {
+      label: "Staple",
+      options: [
+        {label: "Staples", value: "staple=yes"}
+      ]
+    },
+    {
       label: "Attribute",
       options: [
         { label: "Dark", value: "attribute=Dark" },

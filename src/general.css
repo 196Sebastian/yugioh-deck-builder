@@ -1,0 +1,20 @@
+.card-section {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 20px;
+  background-color: lightgreen;
+}
+
+
+/* .default-message {
+  margin: 16px;
+  width: 550px;
+  height: 520px;
+  background-color: lightblue;
+} */
+
+/* .search-display {
+  background-color: lightcoral;
+} */
