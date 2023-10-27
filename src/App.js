@@ -2,6 +2,7 @@ import HeaderSection from "./header/Header";
 import FilterSection from "./fliter/FilterSection";
 import "./header/header-styles.css";
 import "./general.css";
+import BuildSection from "./display/BuildSection";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <HeaderSection />
         <div className="display-section">
           <FilterSection />
+          <BuildSection />
         </div>
       </div>
     </>
