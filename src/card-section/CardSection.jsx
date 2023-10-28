@@ -15,9 +15,9 @@ const CardSection = (props) => {
           </div>
         ) : (
           <div className="search-display">
-            <ImageList sx={{ width: 550, height: 520 }} cols={5} gap={4}>
+            <ImageList sx={{ width: 480, height: 500 }} cols={5} gap={4}>
               {props.attributeInfo.map((item) => (
-                <ImageListItem key={item.id} sx={{ width: 90 }}>
+                <ImageListItem key={item.id}>
                   <img
                     srcSet={item.card_images[0].image_url}
                     src={item.card_images[0].image_url}
@@ -41,19 +41,16 @@ const CardSection = (props) => {
       </div>
 
       <div>
-        <ImageList sx={{ width: 550, height: 520 }} cols={5} gap={4}>
+        <ImageList sx={{ width: 480, height: 500 }} cols={5} gap={4}>
           {deck.map((item, id) => (
-            <>
-              <ImageListItem key={id++} sx={{ width: 300 }}>
-                <img
-                  srcSet={item.image_url}
-                  src={item.image_url}
-                  alt={item.name}
-                  loading="lazy"
-                />
-              </ImageListItem>
-              {console.log(item)}
-            </>
+            <ImageListItem key={id}>
+              <img
+                srcSet={item.image_url}
+                src={item.image_url}
+                alt={item.name}
+                loading="lazy"
+              />
+            </ImageListItem>
           ))}
         </ImageList>
       </div>
