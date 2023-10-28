@@ -1,10 +1,12 @@
 import "../display/build.css";
 
-const BuildSection = () => {
+const BuildSection = (props) => {
   return (
-    <div className="display-deck">
-      <h1>this is the 3rd row</h1>
-    </div>
+    <>
+      <div className="display-deck">
+        <h1>{props.name}</h1>
+      </div>
+    </>
   );
 };
 

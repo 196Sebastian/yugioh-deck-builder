@@ -11,7 +11,6 @@ function App() {
         <HeaderSection />
         <div className="display-section">
           <FilterSection />
-          <BuildSection />
         </div>
       </div>
     </>
