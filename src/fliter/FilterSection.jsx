@@ -1,4 +1,5 @@
 import Select from "react-select/creatable";
+import TypeInfo from "../data/typeInfo";
 import SearchOptions from "../data/searchInfo";
 import { useState } from "react";
 import CardSection from "../card-section/CardSection";
@@ -17,7 +18,15 @@ const FilterSection = () => {
 
   return (
     <>
-      <div className="filter">
+      <div>
+        <Select
+          isSearchable={false}
+          options={TypeInfo()}
+          onChange={(apiEndPoint) => {
+            getAttributeData(apiEndPoint.value);
+          }}
+        />
+
         <Select
           isSearchable={false}
           options={SearchOptions()}
