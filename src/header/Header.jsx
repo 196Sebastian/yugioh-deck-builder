@@ -3,8 +3,9 @@ import HeaderLogo from "../images/yugi-logo.png";
 
 const HeaderSection = () => {
   return (
-    <header className="header-toplayout">
+    <header className="header-top-layout">
       <img className="logo-image" src={HeaderLogo} />
+      <h1 className="title">Yugioh-Deck-Builder</h1>
     </header>
   );
 };
