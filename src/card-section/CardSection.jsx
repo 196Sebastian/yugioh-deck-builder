@@ -7,13 +7,13 @@ const CardSection = (props) => {
   return (
     <>
       <div>
-        {props.attributeInfo.length === 0 ? (
+        {props.cardsArrayList.length === 0 ? (
           <div className="default-message">
             <h1>Please Select CARDS TO BUILD YOUR DECK...</h1>
           </div>
         ) : (
           <div className="display">
-            {props.attributeInfo.map((item) => (
+            {props.cardsArrayList.map((item) => (
               <img
                 key={item.id}
                 className="image"

@@ -1,4 +1,4 @@
-const SearchOptions = () => {
+const AttributeInfo = () => {
   const searchOptions = [
     {
       label: "Attribute",
@@ -16,4 +16,4 @@ const SearchOptions = () => {
   return searchOptions;
 };
 
-export default SearchOptions;
+export default AttributeInfo;
