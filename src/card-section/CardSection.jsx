@@ -66,6 +66,8 @@ const CardSection = (props) => {
       </div>
 
       <div className="display">
+        <h1 className="deck-text">MAIN DECK</h1>
+
         <div>
           {deck.map((item, index) => (
             <img
@@ -79,15 +81,19 @@ const CardSection = (props) => {
         </div>
 
         <div>
-          {extraDeck.map((item, index) => (
-            <img
-              className="image"
-              id={item.id}
-              key={index}
-              src={item.image_url}
-              alt={item.name}
-            />
-          ))}
+          <h1 className="deck-text">EXTRA DECK</h1>
+
+          <div>
+            {extraDeck.map((item, index) => (
+              <img
+                className="image"
+                id={item.id}
+                key={index}
+                src={item.image_url}
+                alt={item.name}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>

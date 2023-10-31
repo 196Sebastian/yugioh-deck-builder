@@ -17,3 +17,8 @@
 .image {
   width: 80px;
 }
+
+.deck-text {
+  font-size: 16px;
+  color: white;
+}
