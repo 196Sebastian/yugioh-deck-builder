@@ -22,3 +22,17 @@
   font-size: 16px;
   color: white;
 }
+
+.save {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save-button {
+  width: 90px;
+  height: 20px;
+  border: none;
+  border-radius: 12%;
+  background-color: #6e5992;
+}

@@ -66,7 +66,12 @@ const CardSection = (props) => {
       </div>
 
       <div className="display">
-        <h1 className="deck-text">MAIN DECK</h1>
+        <div className="save">
+          <h1 className="deck-text">MAIN DECK</h1>
+          <button className="save-button" onClick={() => {}}>
+            save deck
+          </button>
+        </div>
 
         <div>
           {deck
