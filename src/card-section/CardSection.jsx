@@ -69,22 +69,9 @@ const CardSection = (props) => {
         <h1 className="deck-text">MAIN DECK</h1>
 
         <div>
-          {deck.map((item, index) => (
-            <img
-              className="image"
-              id={item.id}
-              key={index}
-              src={item.image_url}
-              alt={item.name}
-            />
-          ))}
-        </div>
-
-        <div>
-          <h1 className="deck-text">EXTRA DECK</h1>
-
-          <div>
-            {extraDeck.map((item, index) => (
+          {deck
+            .sort((a, b) => a.id - b.id)
+            .map((item, index) => (
               <img
                 className="image"
                 id={item.id}
@@ -93,6 +80,22 @@ const CardSection = (props) => {
                 alt={item.name}
               />
             ))}
+        </div>
+
+        <div>
+          <h1 className="deck-text">EXTRA DECK</h1>
+          <div>
+            {extraDeck
+              .sort((a, b) => a.id - b.id)
+              .map((item, index) => (
+                <img
+                  className="image"
+                  id={item.id}
+                  key={index}
+                  src={item.image_url}
+                  alt={item.name}
+                />
+              ))}
           </div>
         </div>
       </div>
