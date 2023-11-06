@@ -7,27 +7,28 @@ const CardSection = (props) => {
   const [extraDeck, setExtraDeck] = useState([]);
   const [customDeck, setCustomDeck] = useState([]);
   const [deckName, setDeckName] = useState("");
+  const [deckData, setDeckData] = useState([]);
 
-  // const [listOfKeys, setListOfKeys] = useState([]);
-  // const getOption = () => {
-  //   Object.keys(localStorage).map((item) => {
-  //     <option>{item}</option>;
-  //   });
-  // };
+  const currentData = JSON.parse(localStorage.getItem("save-deck")) || [];
+
+  const info = {
+    id: Date.now(),
+    deckName: deckName,
+    deck: customDeck,
+  };
 
   const nameChange = (e) => {
     setDeckName(e.target.value);
   };
 
-  const together = () => {
-    setCustomDeck(deck.concat(extraDeck));
+  const getDeckNameData = () => {
+    setDeckData(currentData);
   };
 
   const onButtonSave = () => {
-    const jsonArray = JSON.stringify(customDeck);
-    localStorage.setItem(`${deckName}`, jsonArray);
-    const str = localStorage.getItem(`${deckName}`);
-    JSON.parse(str);
+    const newObject = info;
+    currentData.push(newObject);
+    localStorage.setItem("save-deck", JSON.stringify(currentData));
   };
 
   const setExtraDeckFun = (item) => {
@@ -66,6 +67,10 @@ const CardSection = (props) => {
     }
   };
 
+  const addToCustomDeck = (item) => {
+    customDeck.push(item);
+  };
+
   return (
     <>
       <div className="display">
@@ -82,8 +87,8 @@ const CardSection = (props) => {
                 src={item.card_images[0].image_url}
                 alt={item.name}
                 onClick={() => {
-                  together();
                   separateDeck(item);
+                  addToCustomDeck(item);
                 }}
               />
             ))}
@@ -100,8 +105,14 @@ const CardSection = (props) => {
               onChange={nameChange}
             />
 
-            {/* FIND A WAY TO USE THE KEYS TO BE ABLE TO CLICK ON THE SAVED DECKS */}
-            <select></select>
+            <select onClick={getDeckNameData}>
+              <option>Saved Decks</option>
+              {deckData.map((item) => (
+                <option key={item.id} onClick={() => {}}>
+                  {item.deckName}
+                </option>
+              ))}
+            </select>
 
             <button
               className="save-button"
