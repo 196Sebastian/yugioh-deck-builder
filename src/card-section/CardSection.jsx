@@ -113,6 +113,7 @@ const CardSection = (props) => {
         <div className="main-deck">
           <div className="save-info">
             <input
+              id="input"
               placeholder="Deck Name"
               value={deckName}
               onChange={nameChange}
@@ -133,14 +134,24 @@ const CardSection = (props) => {
             </select>
 
             <button
-              className="save-button"
+              className="button"
               onClick={() => {
                 onButtonSave();
               }}
             >
               save
             </button>
+            <button
+              className="button"
+              onClick={() => {
+                setDeck([]);
+                setExtraDeck([]);
+              }}
+            >
+              clear
+            </button>
           </div>
+
           {deck
             .sort((a, b) => a.id - b.id)
             .map((item, index) => (

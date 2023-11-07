@@ -8,9 +8,9 @@ import AttributeInfo from "../data/attributeInfo";
 
 const FilterSection = () => {
   const [cardsArrayList, setCardsArrayList] = useState([]);
-  const [type, setType] = useState();
-  const [attribute, setNewAttribute] = useState();
-  const [level, setLevel] = useState();
+  const [type, setType] = useState("");
+  const [attribute, setNewAttribute] = useState("");
+  const [level, setLevel] = useState("");
 
   const getAttributeData = async (type, attribute, level) => {
     const response = await fetch(
