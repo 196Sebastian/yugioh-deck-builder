@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import Select from "react-select/creatable";
 import "../card-section/card-section.css";
 
 const CardSection = (props) => {
   const [deck, setDeck] = useState([]);
   const [extraDeck, setExtraDeck] = useState([]);
-  const [customDeck, setCustomDeck] = useState([]);
   const [deckName, setDeckName] = useState("");
   const [deckData, setDeckData] = useState([]);
 
@@ -14,7 +12,8 @@ const CardSection = (props) => {
   const info = {
     id: Date.now(),
     deckName: deckName,
-    deck: customDeck,
+    deck: deck,
+    extraDeck: extraDeck,
   };
 
   const nameChange = (e) => {
@@ -36,7 +35,9 @@ const CardSection = (props) => {
       ...extraDeck,
       {
         id: item.id,
+        name: item.name,
         image_url: item.card_images[0].image_url,
+        frameType: item.frameType,
       },
     ]);
   };
@@ -61,14 +62,23 @@ const CardSection = (props) => {
         ...deck,
         {
           id: item.id,
+          name: item.name,
           image_url: item.card_images[0].image_url,
+          frameType: item.frameType,
         },
       ]);
     }
   };
 
-  const addToCustomDeck = (item) => {
-    customDeck.push(item);
+  const getLocalDeckName = (target) => {
+    const currentDeckClicked = currentData.filter((current) => {
+      if (target === current.deckName) {
+        return current;
+      }
+    });
+
+    setDeck([...currentDeckClicked[0].deck]);
+    setExtraDeck([...currentDeckClicked[0].extraDeck]);
   };
 
   return (
@@ -82,13 +92,12 @@ const CardSection = (props) => {
           <div>
             {props.cardsArrayList.map((item) => (
               <img
-                key={item.id}
                 className="image"
+                key={item.id}
                 src={item.card_images[0].image_url}
                 alt={item.name}
                 onClick={() => {
                   separateDeck(item);
-                  addToCustomDeck(item);
                 }}
               />
             ))}
@@ -108,7 +117,12 @@ const CardSection = (props) => {
             <select onClick={getDeckNameData}>
               <option>Saved Decks</option>
               {deckData.map((item) => (
-                <option key={item.id} onClick={() => {}}>
+                <option
+                  key={item.id}
+                  onClick={(e) => {
+                    getLocalDeckName(e.target.value);
+                  }}
+                >
                   {item.deckName}
                 </option>
               ))}
