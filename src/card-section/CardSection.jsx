@@ -23,7 +23,7 @@ const CardSection = (props) => {
   const getDeckNameData = () => {
     setDeckData(currentData);
   };
-
+  
   const onButtonSave = () => {
     const newObject = info;
     currentData.push(newObject);
@@ -146,6 +146,9 @@ const CardSection = (props) => {
                 key={index}
                 src={item.image_url}
                 alt={item.name}
+                onClick={() => {
+                  setDeck([...deck.slice(0, index), ...deck.slice(index + 1)]);
+                }}
               />
             ))}
         </div>
@@ -161,6 +164,12 @@ const CardSection = (props) => {
                   key={index}
                   src={item.image_url}
                   alt={item.name}
+                  onClick={() => {
+                    setExtraDeck([
+                      ...extraDeck.slice(0, index),
+                      ...extraDeck.slice(index + 1),
+                    ]);
+                  }}
                 />
               ))}
           </div>
