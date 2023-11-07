@@ -23,11 +23,15 @@ const CardSection = (props) => {
   const getDeckNameData = () => {
     setDeckData(currentData);
   };
-  
+
   const onButtonSave = () => {
-    const newObject = info;
-    currentData.push(newObject);
-    localStorage.setItem("save-deck", JSON.stringify(currentData));
+    if (deckName.length !== 0) {
+      const newObject = info;
+      currentData.push(newObject);
+      localStorage.setItem("save-deck", JSON.stringify(currentData));
+    } else {
+      alert("Please Name Your Deck!");
+    }
   };
 
   const setExtraDeckFun = (item) => {
