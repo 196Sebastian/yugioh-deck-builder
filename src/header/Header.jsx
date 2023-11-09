@@ -5,7 +5,7 @@ const HeaderSection = () => {
   return (
     <header className="header-top-layout">
       <img className="logo-image" src={HeaderLogo} alt="logo icon" />
-      <h1 className="title">Yugioh-Deck-Builder</h1>
+      <h1 className="title-text">Yugioh-Deck-Builder</h1>
     </header>
   );
 };

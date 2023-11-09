@@ -1,12 +1,24 @@
 .header-top-layout {
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #3c878a;
-  height: 80px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(61, 136, 138, 0.9)),
+    url("../images/background.jpg");
 }
 
 .logo-image {
   height: 65px;
   margin: 8px 8px 0px;
+}
+
+.title-text {
+  color: #d6ca7e;
+  font-size: 36px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(0, 0, 0, 0.7);
+  font-family: "Russo One", sans-serif;
 }

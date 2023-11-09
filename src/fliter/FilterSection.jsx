@@ -28,7 +28,7 @@ const FilterSection = () => {
   return (
     <>
       <div className="main">
-        <div className="title">
+        <div className="filter-text">
           <h1>FILTERS</h1>
         </div>
 
@@ -40,9 +40,7 @@ const FilterSection = () => {
               setType(type.value);
             }}
           />
-        </div>
 
-        <div className="filter">
           <Select
             isSearchable={false}
             options={AttributeInfo()}
@@ -50,9 +48,7 @@ const FilterSection = () => {
               setNewAttribute(attribute.value);
             }}
           />
-        </div>
 
-        <div className="filter">
           <Select
             isSearchable={false}
             options={LevelInfo()}

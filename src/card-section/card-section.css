@@ -34,6 +34,11 @@
   color: white;
 }
 
+.selector,
+.button {
+  cursor: pointer;
+}
+
 .save-info {
   display: flex;
   align-items: center;
@@ -47,6 +52,7 @@
   border: none;
   border-radius: 12%;
   background-color: #6e5992;
+  font-family: "Russo One", sans-serif;
 }
 
 .text {

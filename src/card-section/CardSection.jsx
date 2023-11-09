@@ -135,7 +135,7 @@ const CardSection = (props) => {
               onChange={nameChange}
             />
 
-            <select onClick={getDeckNameData}>
+            <select className="selector" onClick={getDeckNameData}>
               <option>Saved Decks</option>
               {deckData.map((item) => (
                 <option
