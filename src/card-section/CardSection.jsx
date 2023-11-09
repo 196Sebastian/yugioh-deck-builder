@@ -5,6 +5,7 @@ const CardSection = (props) => {
   const [deck, setDeck] = useState([]);
   const [extraDeck, setExtraDeck] = useState([]);
   const [deckName, setDeckName] = useState("");
+  const [currentDeckName, setCurrentDeckName] = useState("");
   const [deckData, setDeckData] = useState([]);
 
   const currentData = JSON.parse(localStorage.getItem("save-deck")) || [];
@@ -22,6 +23,11 @@ const CardSection = (props) => {
 
   const getDeckNameData = () => {
     setDeckData(currentData);
+  };
+
+  const onClear = () => {
+    setDeck([]);
+    setExtraDeck([]);
   };
 
   const onButtonSave = () => {
@@ -85,6 +91,16 @@ const CardSection = (props) => {
     setExtraDeck([...currentDeckClicked[0].extraDeck]);
   };
 
+  const onDeleteClicked = (valueToRemove) => {
+    onClear();
+    getDeckNameData();
+
+    var updatedList = deckData.filter((deck) => {
+      return deck.deckName !== valueToRemove;
+    });
+    localStorage.setItem("save-deck", JSON.stringify(updatedList));
+  };
+
   return (
     <>
       <div className="display">
@@ -126,6 +142,7 @@ const CardSection = (props) => {
                   key={item.id}
                   onClick={(e) => {
                     getLocalDeckName(e.target.value);
+                    setCurrentDeckName(e.target.value);
                   }}
                 >
                   {item.deckName}
@@ -141,14 +158,23 @@ const CardSection = (props) => {
             >
               save
             </button>
+
             <button
               className="button"
               onClick={() => {
-                setDeck([]);
-                setExtraDeck([]);
+                onClear();
               }}
             >
               clear
+            </button>
+
+            <button
+              className="button"
+              onClick={() => {
+                onDeleteClicked(currentDeckName);
+              }}
+            >
+              Delete
             </button>
           </div>
 
