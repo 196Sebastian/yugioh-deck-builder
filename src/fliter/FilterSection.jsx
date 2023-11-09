@@ -16,8 +16,13 @@ const FilterSection = () => {
     const response = await fetch(
       `https://db.ygoprodeck.com/api/v7/cardinfo.php?${type}&${attribute}&${level}`
     );
-    const data = await response.json();
-    setCardsArrayList(data.data);
+
+    if (response.status !== 400) {
+      const data = await response.json();
+      setCardsArrayList(data.data);
+    } else {
+      alert("No card matching your query was found in the database.");
+    }
   };
 
   return (
