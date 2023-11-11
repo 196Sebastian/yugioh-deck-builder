@@ -1,0 +1,16 @@
+.bottom-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-icon {
+  height: 40xp;
+  width: 40px;
+  padding: 10px;
+}
+
+.logo-icon:hover {
+  cursor: pointer;
+  color: blue;
+}
