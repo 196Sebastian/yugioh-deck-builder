@@ -56,18 +56,18 @@ const FilterSection = () => {
               setLevel(level.value);
             }}
           />
+
+          <button
+            className="search-button"
+            onClick={() => {
+              getAttributeData(type, attribute, level);
+            }}
+          >
+            search
+          </button>
         </div>
-
-        <button
-          className="search-button"
-          onClick={() => {
-            getAttributeData(type, attribute, level);
-          }}
-        >
-          search
-        </button>
       </div>
-
+ 
       <CardSection cardsArrayList={cardsArrayList} />
     </>
   );
